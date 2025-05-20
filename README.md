@@ -1,36 +1,24 @@
-# Java JUnit5
+# Bowling Kata
 
-A minimal setup with Java, [JUnit5](https://junit.org/junit5/), [AssertJ](https://assertj.github.io/doc/) and [Mockito](https://site.mockito.org/) to get you started.
+An example of a bowling class respect this specifications:
 
-You can use [gradle](https://gradle.org/) or [maven](https://maven.apache.org/)
+# Bowling Rules
+The game consists of 10 frames. In each frame the player has two rolls to knock down 10 pins.
+The score for the frame is the total number of pins knocked down, plus bonuses for strikes and spares.
 
-[More complicated JUnit5 setups](https://github.com/junit-team/junit5-samples)
+- A spare is when the player knocks down all 10 pins in two rolls.
+The bonus for that frame is the number of pins knocked down by the next roll.
 
-## Setup
+- A strike is when the player knocks down all 10 pins on his first roll.
+The frame is then completed with a single roll.
+The bonus for that frame is the value of the next two rolls.
 
-    git clone https://github.com/swkBerlin/kata-bootstraps
-    cd java/junit5
+- In the tenth frame a player who rolls a spare or strike is allowed to roll the extra balls to complete the frame.
+However no more than three balls can be rolled in tenth frame.
 
-Open as preexisting project in your favorite IDE and choose between gradle or maven nature
+# Requirements
+Write a class Game that has two methods
 
-## (optional) IDE Setup
+- void roll(int) is called each time the player rolls a ball. The argument is the number of pins knocked down.
 
-Run `./gradlew idea` to build [idea](https://www.jetbrains.com/idea) project.
-
-## Running Tests
-
-To execute the tests either run `./gradlew test`, `mvn test` or run the tests from the IDE you are using
-
-## Test Libraries Available from the Get-Go
-- [JUnit 5.8.2](https://junit.org/junit5/docs/snapshot/release-notes/#release-notes-5.8.2)
-- [AssertJ 3.22.0](https://assertj.github.io/doc/#assertj-core-release-notes)
-- [Mockito 4.3.1](https://github.com/mockito/mockito/releases)
-
-
-## Additional Libraries
-- [Vavr](https://www.vavr.io/) a functional library for Java.
-
-
-This repo was tested with [idea](https://www.jetbrains.com/idea) [2020.3.1](https://confluence.jetbrains.com/display/IDEADEV/IntelliJ+IDEA+2020.3.1+%28203.6682.168+build%29+Release+Notes), if you encounter problems please open an issue or send a pull request.
-
-Have fun!
+- int score() returns the total score for that game.
