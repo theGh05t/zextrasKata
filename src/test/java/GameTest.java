@@ -158,6 +158,22 @@ class GameTest {
 
     }
 
+    @Test
+    void aFullPlayOfStrikeIs300(){
+        for (int i = 0; i < 12; i++) {
+            game.roll(10);
+        }
+        assertEquals(300,game.score());
+    }
+
+    @Test
+    void aFullPlayOfMissIs0(){
+        for (int i = 0; i < 20; i++) {
+            game.roll(0);
+        }
+        assertEquals(0,game.score());
+    }
+
     private void lastFrame() {
         for (int i = 0; i < 18; i++) {
             game.roll(0);
